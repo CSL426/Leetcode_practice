@@ -47,4 +47,4 @@ def main():
     print(solution.twoSum([3, 3], 6))  # 輸出：[0, 1]
 
 
-main()
+# main()
