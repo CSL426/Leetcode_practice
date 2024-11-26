@@ -59,4 +59,4 @@ def calculate_optimal_rebate(amount: int, plan="UP", available_points=0):
 
 
 # 測試函數
-calculate_optimal_rebate(199, available_points=300)
+calculate_optimal_rebate(330, available_points=710)

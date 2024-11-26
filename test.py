@@ -9,4 +9,3 @@ translations = {
 }
 
 print(translations['M'])
- 
