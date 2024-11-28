@@ -12,7 +12,7 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        head = ListNode()
+        head = ListNode(0)
         current = head
 
         while list1 != None and list2 != None:
@@ -22,10 +22,13 @@ class Solution(object):
             else:
                 current.next = list2
                 list2 = list2.next
-            
+
             current = current.next
-    #  temp.next = l1 or l2  #5
-    #     return dummy.next #6
+
+        current.next = list1 or list2
+
+        return head.next
+
 
 def create_node(nums):
     """
@@ -41,8 +44,21 @@ def create_node(nums):
     for num in nums[1:]:
         current.next = ListNode(num)
         current = current.next
-    
+
     return head
+
+
+def listnode_to_list(node):
+    """
+    Convert ListNode to list for easy visualization
+    :type node: Optional[ListNode]
+    :rtype: List[int]
+    """
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
 
 
 if __name__ == "__main__":
@@ -50,5 +66,4 @@ if __name__ == "__main__":
     list2 = [1, 3, 4]
     list_node1 = create_node(list1)
     list_node2 = create_node(list2)
-    # print(Solution().mergeTwoLists(list1, list2))
-    print(list_node2)
+    print(listnode_to_list(Solution().mergeTwoLists(list_node1, list_node2)))

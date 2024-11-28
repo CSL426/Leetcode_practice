@@ -40,11 +40,13 @@ class Solution(object):
         return result.tolist()
 
 
-def main():
-    solution = Solution()
-    print(solution.twoSum([2, 7, 11, 15], 9))  # 輸出：[0, 1]
-    print(solution.twoSum([3, 2, 4], 6))  # 輸出：[1, 2]
-    print(solution.twoSum([3, 3], 6))  # 輸出：[0, 1]
+# def main():
+#     solution = Solution()
+#     print(solution.twoSum([2, 7, 11, 15], 9))  # 輸出：[0, 1]
+#     print(solution.twoSum([3, 2, 4], 6))  # 輸出：[1, 2]
+#     print(solution.twoSum([3, 3], 6))  # 輸出：[0, 1]
 
+if __name__ == "__main__":
+    num_list = [[2, 7, 11, 15], 9]
+    print(Solution().twoSum(num_list[0], num_list[1]))
 
-# main()
