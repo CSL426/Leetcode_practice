@@ -4,28 +4,22 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        if not nums:
+            return 0
 
-        nums_list = nums[:]
         k = 1
-        count = 0
-        current = nums[0]
 
-        for index in range(len(nums)-1):
-
-            if current == nums_list[index+1]:
-                nums[-1-count] = '_'
-                count += 1
-            elif current < nums_list[index+1]:
-                nums[k] = nums_list[index+1]
-                current = nums[k]
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[k] = nums[i]
                 k += 1
 
-        return k, nums
+        return k
 
 
 if __name__ == "__main__":
 
-    nums = [1, 1, 2]
     nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    nums = [1, 1, 2]
 
     print(Solution().removeDuplicates(nums))
